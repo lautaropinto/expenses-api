@@ -1,4 +1,4 @@
-/*package main
+package main
 
 import (
 	"encoding/json"
@@ -15,4 +15,4 @@ func AddTasksRoutes(router *mux.Router) {
 func getTasks(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(tasks)
 
-}*/
+}
