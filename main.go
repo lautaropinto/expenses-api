@@ -2,21 +2,15 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 
-	"github.com/joho/godotenv"
 )
 
 func main() {
 	fmt.Println("Server init!")
 	router := MainRouter()
-
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	router.Use(defaultHeadersMiddleware)
 
 	host := os.Getenv("DB_PORT")
 
