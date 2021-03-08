@@ -18,12 +18,12 @@ func main() {
 		log.Fatalf("Error loading .env file")
 	}
 
-	host := os.Getenv("DB_PORT")
+	host := os.Getenv("PORT")
 
 	if host == "" {
-		host = "localhost:3000"
+		host = "3000"
 	}
 
-	http.ListenAndServe(host, router)
+	http.ListenAndServe(":" + host, router)
 
 }
