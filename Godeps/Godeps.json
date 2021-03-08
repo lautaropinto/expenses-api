@@ -1,0 +1,12 @@
+{
+	"ImportPath": "expenses-api",
+	"GoVersion": "go1.15",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.8.0-1-gd07530f",
+			"Rev": "d07530f46e1eec4e40346e24af34dcc6750ad39f"
+		}
+	]
+}
