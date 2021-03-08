@@ -1,1 +1,1 @@
-go run .
+web: expenses-api
