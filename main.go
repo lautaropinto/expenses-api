@@ -2,20 +2,28 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
-	"github.com/gorilla/mux"
-	"encoding/json"
+	"os"
+
+	"github.com/joho/godotenv"
 )
 
-func main() { 
-	fmt.Println("favio c ka come")
-	router := mux.NewRouter()
+func main() {
+	fmt.Println("Server init!")
+	router := MainRouter()
 
-	router.HandleFunc("/texto", textHandler).Methods("GET")
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
 
-	http.ListenAndServe(":3000", router)
-}
+	host := os.Getenv("DB_PORT")
 
-func textHandler(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("Text - GET")
+	if host == "" {
+		host = "localhost:3000"
+	}
+
+	http.ListenAndServe(host, router)
+
 }
