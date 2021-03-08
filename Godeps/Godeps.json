@@ -7,6 +7,11 @@
 			"ImportPath": "github.com/gorilla/mux",
 			"Comment": "v1.8.0-1-gd07530f",
 			"Rev": "d07530f46e1eec4e40346e24af34dcc6750ad39f"
+		},
+		{
+			"ImportPath": "github.com/joho/godotenv",
+			"Comment": "v1.3.0-36-gddf83eb",
+			"Rev": "ddf83eb33bbb136f62617a409142b74b91dbcff3"
 		}
 	]
 }
