@@ -18,12 +18,6 @@ func getTasks(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("Task - POST")
 }
 
-func MainRouter() *mux.Router {
-	router := mux.NewRouter()
-	router.HandleFunc("/tasks", getTasks).Methods("POST")
-	return router
-}
-
-func resolveHome1(w http.ResponseWriter, r *http.Request) {
+func resolveHome(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode("GET HOME PAPURRI")
 }
